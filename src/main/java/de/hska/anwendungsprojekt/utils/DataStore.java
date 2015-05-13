@@ -2,7 +2,7 @@ package de.hska.anwendungsprojekt.utils;
 
 import java.util.ArrayList;
 
-import de.hska.anwendungsprojekt.model.IssueModel;
+import de.hska.anwendungsprojekt.domain.Issue;
 
 /**
  * BestPractise
@@ -21,6 +21,6 @@ public class DataStore {
 		return sInstance;
 	}
 	
-	public ArrayList<IssueModel> getAllIssues = new ArrayList<IssueModel>();
+	public ArrayList<Issue> getAllIssues = new ArrayList<Issue>();
 
 }

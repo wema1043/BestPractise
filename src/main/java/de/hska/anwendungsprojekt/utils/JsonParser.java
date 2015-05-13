@@ -7,7 +7,7 @@ import org.primefaces.json.JSONException;
 import org.primefaces.json.JSONObject;
 
 import de.hska.anwendungsprojekt.client.JiraClient;
-import de.hska.anwendungsprojekt.model.*;
+import de.hska.anwendungsprojekt.domain.*;
 
 /**
  * BestPractise
@@ -35,14 +35,14 @@ public class JsonParser {
 
 		JSONArray tasks = jsonObject.getJSONArray("issues");
 
-		ArrayList<IssueModel> allIssues = new ArrayList<IssueModel>();
+		ArrayList<Issue> allIssues = new ArrayList<Issue>();
 		
 		for (int zl = 0; zl < tasks.length(); zl++) {
-			IssueModel myIssue = new IssueModel();
-			FieldModel myField = new FieldModel();
-			CreatorModel myCreator = new CreatorModel();
-			StatusModel myStatus = new StatusModel();
-			AssigneeModel myAssignee = new AssigneeModel();
+			Issue myIssue = new Issue();
+			Field myField = new Field();
+			Creator myCreator = new Creator();
+			Status myStatus = new Status();
+			Assignee myAssignee = new Assignee();
 			myIssue.setId((tasks.getJSONObject(zl).getString("id")));
 			myIssue.setKey((tasks.getJSONObject(zl).getString("key")));
 			myIssue.setSelf((tasks.getJSONObject(zl).getString("self")));

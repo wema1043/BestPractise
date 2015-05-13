@@ -1,4 +1,4 @@
-package de.hska.anwendungsprojekt.model;
+package de.hska.anwendungsprojekt.domain;
 
 /**
  * BestPractise
@@ -9,12 +9,12 @@ package de.hska.anwendungsprojekt.model;
  * @date 2015-05-12
  *
  */
-public class IssueModel {
+public class Issue {
 	
 	private String id;
 	private String self;
 	private String key;
-	private FieldModel field;
+	private Field field;
 	
 	
 	public String getId() {
@@ -35,10 +35,10 @@ public class IssueModel {
 	public void setKey(String key) {
 		this.key = key;
 	}
-	public FieldModel getField() {
+	public Field getField() {
 		return field;
 	}
-	public void setField(FieldModel field) {
+	public void setField(Field field) {
 		this.field = field;
 	}	
 }

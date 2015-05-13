@@ -8,7 +8,7 @@ import javax.faces.bean.ManagedBean;
 import org.primefaces.json.JSONException;
 import org.primefaces.model.chart.PieChartModel;
 
-import de.hska.anwendungsprojekt.model.IssueModel;
+import de.hska.anwendungsprojekt.domain.Issue;
 import de.hska.anwendungsprojekt.utils.DataStore;
 import de.hska.anwendungsprojekt.utils.JsonParser;
 
@@ -42,7 +42,7 @@ public class OpenClosedPiChart {
 
 		HashMap<String, Integer> myMap = new HashMap<String, Integer>();
 
-		for (IssueModel issue : DataStore.getInstance().getAllIssues) {
+		for (Issue issue : DataStore.getInstance().getAllIssues) {
 			if (myMap.containsKey(issue.getField().getStatus().getName())) {
 				Integer tmpValue = myMap.get(issue.getField().getStatus()
 						.getName()) + 1;

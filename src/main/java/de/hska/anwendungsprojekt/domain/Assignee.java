@@ -1,6 +1,6 @@
-package de.hska.anwendungsprojekt.model;
+package de.hska.anwendungsprojekt.domain;
 
-public class AssigneeModel {
+public class Assignee {
 
 	private String name;
 

@@ -1,4 +1,4 @@
-package de.hska.anwendungsprojekt.model;
+package de.hska.anwendungsprojekt.domain;
 
 /**
  * BestPractise
@@ -9,21 +9,21 @@ package de.hska.anwendungsprojekt.model;
  * @date 2015-05-12
  *
  */
-public class FieldModel {
+public class Field {
 
-	private CreatorModel creator;
+	private Creator creator;
 	private String resolutionDate;
 	private String createdDate;
 	private String updated;
 	private String summary;
-	private AssigneeModel assignee;
-	private StatusModel status;
+	private Assignee assignee;
+	private Status status;
 	
 	
-	public CreatorModel getCreator() {
+	public Creator getCreator() {
 		return creator;
 	}
-	public void setCreator(CreatorModel creator) {
+	public void setCreator(Creator creator) {
 		this.creator = creator;
 	}
 	public String getResolutionDate() {
@@ -50,16 +50,16 @@ public class FieldModel {
 	public void setSummary(String summary) {
 		this.summary = summary;
 	}
-	public StatusModel getStatus() {
+	public Status getStatus() {
 		return status;
 	}
-	public void setStatus(StatusModel status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
-	public AssigneeModel getAssignee() {
+	public Assignee getAssignee() {
 		return assignee;
 	}
-	public void setAssignee(AssigneeModel assignee) {
+	public void setAssignee(Assignee assignee) {
 		this.assignee = assignee;
 	}	
 }

@@ -1,4 +1,4 @@
-package de.hska.anwendungsprojekt.model;
+package de.hska.anwendungsprojekt.domain;
 
 /**
  * BestPractise
@@ -9,7 +9,7 @@ package de.hska.anwendungsprojekt.model;
  * @date 2015-05-12
  *
  */
-public class CreatorModel {
+public class Creator {
 
 	private String name;
 
