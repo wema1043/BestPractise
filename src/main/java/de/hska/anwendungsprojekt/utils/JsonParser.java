@@ -22,16 +22,15 @@ public class JsonParser {
 
 	/**
 	 * parse the json string to Java-model
-	 * 
-	 * @throws JSONException
+	 * @throws Exception 
 	 */
-	public static void ParseJsonToIssue() throws JSONException {
+	public static void ParseJsonToIssue() throws Exception {
 		JSONObject jsonObject = null;
 		try {
 			jsonObject = new JSONObject(JiraClient.getAllIssues());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw new Exception ("Daten können nicht geladen werden");
 		}
 
 		JSONArray tasks = jsonObject.getJSONArray("issues");

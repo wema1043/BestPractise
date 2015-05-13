@@ -120,6 +120,21 @@
 			<artifactId>primefaces</artifactId>
 			<version>5.2</version>
 		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>1.19</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-core</artifactId>
+			<version>1.19</version>
+		</dependency>
+		<dependency>
+        	<groupId>com.sun.jersey</groupId>
+        	<artifactId>jersey-client</artifactId>
+        	<version>1.8</version>
+		</dependency>
 	</dependencies>
 	<repositories>
 		<repository>

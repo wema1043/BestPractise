@@ -1,11 +1,25 @@
 package de.hska.anwendungsprojekt.client;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
+import org.apache.commons.io.IOUtils;
+
+import com.sun.jersey.api.client.Client;
+import com.sun.jersey.api.client.ClientResponse;
+import com.sun.jersey.api.client.WebResource;
+import com.sun.jersey.core.util.Base64;
 
 import de.hska.anwendungsprojekt.utils.Constants;
+import de.hska.anwendungsprojekt.utils.CreateCacheFile;
 import sun.misc.BASE64Encoder;
 
 /**
@@ -21,7 +35,7 @@ public class JiraClient {
 
 	/**
 	 * get-Request to get all issues from the group.
-	 * 
+	 * 		send get Request only if the local file does not exist
 	 * @return response String
 	 * 
 	 * @throws Exception
@@ -29,32 +43,70 @@ public class JiraClient {
 	public static String getAllIssues() throws Exception {
 
 		String url = Constants.JIRA_URL_ALL_ISSUES;
-
-		URL obj = new URL(url);
-		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
-
-		con.setRequestMethod("GET");
-		BASE64Encoder enc = new sun.misc.BASE64Encoder();
-		String userpassword = Constants.USERNAME + ":" + Constants.PASSWORD;
-		String encodedAuthorization = enc.encode(userpassword.getBytes());
-		con.setRequestProperty("Authorization", "Basic " + encodedAuthorization);
-
-		// add request header
-		con.setRequestProperty("User-Agent", Constants.USER_AGENT);
-
-		System.out.println(con.getResponseCode());
-
-		BufferedReader in = new BufferedReader(new InputStreamReader(
-				con.getInputStream()));
-		String inputLine;
-		StringBuffer response = new StringBuffer();
-
-		while ((inputLine = in.readLine()) != null) {
-			response.append(inputLine);
-		}
-		in.close();
-
-		return response.toString();
+		String auth = new String(Base64.encode(Constants.USERNAME + ":" + Constants.PASSWORD));
+		
+		//get Date
+		DateFormat dateFormat = new SimpleDateFormat("yyyy_MM_dd");
+		Calendar cal = Calendar.getInstance();
+		String date = dateFormat.format(cal.getTime());
+		
+		String pathToFile = Constants.PATH_CACHE_FOLDER + "/" + "JIRA" + "/" + "ALL_ISSUES" + date + ".txt";
+		
+		File file = new File(pathToFile);
+		
+		//send get Request only if the local file does not exist
+		if (file.exists()){
+            InputStream is = new FileInputStream(pathToFile);
+            String jsonTxt = IOUtils.toString(is);
+            return jsonTxt; 
+        }else{
+        	//jersey lib
+    		Client client = Client.create();
+    		WebResource webResource = client.resource(url);
+    		
+    		ClientResponse response = webResource.header("Authorization", "Basic " + auth)
+    									.type("application/json").accept("application/json")
+    									.get(ClientResponse.class);
+    		
+    		String responseBody = response.getEntity(String.class);
+    		
+    		//create cache File
+    		CreateCacheFile.createCacheFile("JIRA", "ALL_ISSUES", date, responseBody);
+    		
+    		return responseBody;
+        }
+		
+		
+		
+		
+//		String url = Constants.JIRA_URL_ALL_ISSUES;
+		
+		
+//		URL obj = new URL(url);
+//		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
+//
+//		con.setRequestMethod("GET");
+//		BASE64Encoder enc = new sun.misc.BASE64Encoder();
+//		String userpassword = Constants.USERNAME + ":" + Constants.PASSWORD;
+//		String encodedAuthorization = enc.encode(userpassword.getBytes());
+//		con.setRequestProperty("Authorization", "Basic " + encodedAuthorization);
+//
+//		// add request header
+//		con.setRequestProperty("User-Agent", Constants.USER_AGENT);
+//
+//		System.out.println(con.getResponseCode());
+//
+//		BufferedReader in = new BufferedReader(new InputStreamReader(
+//				con.getInputStream()));
+//		String inputLine;
+//		StringBuffer response = new StringBuffer();
+//
+//		while ((inputLine = in.readLine()) != null) {
+//			response.append(inputLine);
+//		}
+//		in.close();
+//
+//		return response.toString();
 
 	}
 

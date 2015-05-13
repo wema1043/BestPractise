@@ -11,9 +11,4 @@ public class AssigneeModel {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	
-	
-	
-	
 }

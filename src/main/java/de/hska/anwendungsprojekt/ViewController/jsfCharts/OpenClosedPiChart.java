@@ -28,13 +28,14 @@ public class OpenClosedPiChart {
 	 * build a PieChart Model
 	 * 
 	 * @return PieChartModel
+	 * @throws Exception 
 	 */
 	public PieChartModel getPieModel() {
 		try {
 			JsonParser.ParseJsonToIssue();
-		} catch (JSONException e1) {
+		} catch (Exception e) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			e.printStackTrace();
 		}
 
 	

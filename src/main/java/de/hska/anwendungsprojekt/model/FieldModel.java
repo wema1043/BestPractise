@@ -61,9 +61,5 @@ public class FieldModel {
 	}
 	public void setAssignee(AssigneeModel assignee) {
 		this.assignee = assignee;
-	}
-	
-	
-	
-	
+	}	
 }

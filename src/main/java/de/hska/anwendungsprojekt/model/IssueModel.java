@@ -40,9 +40,5 @@ public class IssueModel {
 	}
 	public void setField(FieldModel field) {
 		this.field = field;
-	}
-
-
-	
-	
+	}	
 }
