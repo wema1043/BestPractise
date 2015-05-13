@@ -1,8 +1,6 @@
 package de.hska.anwendungsprojekt.utils;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 import org.primefaces.json.JSONArray;
 import org.primefaces.json.JSONException;

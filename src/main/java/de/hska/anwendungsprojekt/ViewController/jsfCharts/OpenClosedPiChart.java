@@ -1,6 +1,5 @@
-package de.hska.anwendungsprojekt.jsfCharts;
+package de.hska.anwendungsprojekt.ViewController.jsfCharts;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 

@@ -28,12 +28,11 @@ public class JiraClient {
 	 */
 	public static String getAllIssues() throws Exception {
 
-		String url = "http://www.iwi.hs-karlsruhe.de/awpjira/rest/api/2/search?jql=project=HWB&maxResults=-1";
+		String url = Constants.JIRA_URL_ALL_ISSUES;
 
 		URL obj = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) obj.openConnection();
 
-		// optional default is GET
 		con.setRequestMethod("GET");
 		BASE64Encoder enc = new sun.misc.BASE64Encoder();
 		String userpassword = Constants.USERNAME + ":" + Constants.PASSWORD;
@@ -43,9 +42,8 @@ public class JiraClient {
 		// add request header
 		con.setRequestProperty("User-Agent", Constants.USER_AGENT);
 
-		
 		System.out.println(con.getResponseCode());
-		
+
 		BufferedReader in = new BufferedReader(new InputStreamReader(
 				con.getInputStream()));
 		String inputLine;
@@ -61,4 +59,3 @@ public class JiraClient {
 	}
 
 }
-
