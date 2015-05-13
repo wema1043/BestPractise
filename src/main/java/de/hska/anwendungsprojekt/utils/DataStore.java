@@ -23,4 +23,5 @@ public class DataStore {
 	
 	public ArrayList<Issue> getAllIssues = new ArrayList<Issue>();
 
+
 }

@@ -1,12 +1,8 @@
 package de.hska.anwendungsprojekt.client;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -20,7 +16,6 @@ import com.sun.jersey.core.util.Base64;
 
 import de.hska.anwendungsprojekt.utils.Constants;
 import de.hska.anwendungsprojekt.utils.CreateCacheFile;
-import sun.misc.BASE64Encoder;
 
 /**
  * BestPractise

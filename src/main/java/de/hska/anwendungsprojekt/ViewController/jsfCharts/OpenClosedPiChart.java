@@ -1,14 +1,18 @@
 package de.hska.anwendungsprojekt.ViewController.jsfCharts;
 
+import java.io.File;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
 import javax.faces.bean.ManagedBean;
 
-import org.primefaces.json.JSONException;
 import org.primefaces.model.chart.PieChartModel;
 
 import de.hska.anwendungsprojekt.domain.Issue;
+import de.hska.anwendungsprojekt.utils.Constants;
 import de.hska.anwendungsprojekt.utils.DataStore;
 import de.hska.anwendungsprojekt.utils.JsonParser;
 
@@ -24,11 +28,12 @@ import de.hska.anwendungsprojekt.utils.JsonParser;
 @ManagedBean(name = "openClosedPiChart")
 public class OpenClosedPiChart {
 
+
 	/**
 	 * build a PieChart Model
 	 * 
 	 * @return PieChartModel
-	 * @throws Exception 
+	 * @throws Exception
 	 */
 	public PieChartModel getPieModel() {
 		try {
@@ -37,8 +42,6 @@ public class OpenClosedPiChart {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-	
 
 		HashMap<String, Integer> myMap = new HashMap<String, Integer>();
 
