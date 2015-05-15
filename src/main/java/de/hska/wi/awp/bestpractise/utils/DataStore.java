@@ -1,8 +1,8 @@
-package de.hska.anwendungsprojekt.utils;
+package de.hska.wi.awp.bestpractise.utils;
 
 import java.util.ArrayList;
 
-import de.hska.anwendungsprojekt.domain.Issue;
+import de.hska.wi.awp.bestpractise.domain.Issue;
 
 /**
  * BestPractise

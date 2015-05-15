@@ -1,4 +1,4 @@
-package de.hska.anwendungsprojekt.domain;
+package de.hska.wi.awp.bestpractise.domain;
 
 /**
  * BestPractise

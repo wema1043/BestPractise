@@ -1,9 +1,6 @@
-package de.hska.anwendungsprojekt.ViewController.jsfCharts;
+package de.hska.wi.awp.bestpractise.bean.JsfCharts;
 
-import java.io.File;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
+
 import java.util.HashMap;
 import java.util.Map.Entry;
 
@@ -11,10 +8,10 @@ import javax.faces.bean.ManagedBean;
 
 import org.primefaces.model.chart.PieChartModel;
 
-import de.hska.anwendungsprojekt.domain.Issue;
-import de.hska.anwendungsprojekt.utils.Constants;
-import de.hska.anwendungsprojekt.utils.DataStore;
-import de.hska.anwendungsprojekt.utils.JsonParser;
+import de.hska.wi.awp.bestpractise.domain.Issue;
+import de.hska.wi.awp.bestpractise.service.JiraClient;
+import de.hska.wi.awp.bestpractise.utils.DataStore;
+import de.hska.wi.awp.bestpractise.utils.JsonParser;
 
 /**
  * BestPractise
@@ -28,7 +25,6 @@ import de.hska.anwendungsprojekt.utils.JsonParser;
 @ManagedBean(name = "openClosedPiChart")
 public class OpenClosedPiChart {
 
-
 	/**
 	 * build a PieChart Model
 	 * 
@@ -37,7 +33,9 @@ public class OpenClosedPiChart {
 	 */
 	public PieChartModel getPieModel() {
 		try {
-			JsonParser.ParseJsonToIssue();
+			JsonParser parser = new JsonParser();
+			JiraClient client = new JiraClient();
+			parser.ParseJsonToIssue(client.getAllIssues());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

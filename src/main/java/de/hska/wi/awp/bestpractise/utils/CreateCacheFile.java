@@ -1,4 +1,4 @@
-package de.hska.anwendungsprojekt.utils;
+package de.hska.wi.awp.bestpractise.utils;
 
 import java.io.BufferedWriter;
 import java.io.File;

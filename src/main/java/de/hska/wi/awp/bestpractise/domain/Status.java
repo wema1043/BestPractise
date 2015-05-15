@@ -1,16 +1,16 @@
-package de.hska.anwendungsprojekt.domain;
+package de.hska.wi.awp.bestpractise.domain;
 
 /**
  * BestPractise
  * 
- * Model for Creator
+ * Model for Status
  * 
  * @author Marc Weisenburger
  * @date 2015-05-12
  *
  */
-public class Creator {
-
+public class Status {
+	
 	private String name;
 
 	public String getName() {
