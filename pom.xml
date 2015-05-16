@@ -37,6 +37,9 @@
 				<version>2.5</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
+					<resource>
+							<directory>src/main/java</directory>
+					</resource>
 				</configuration>
 			</plugin>
 		</plugins>
