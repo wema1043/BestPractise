@@ -42,7 +42,7 @@
 		</plugins>
 		<testResources>
         	<testResource>
-              	<directory>${project.basedir}/src/main/java</directory>
+              	<directory>${project.basedir}/src/main/java/de/hska/wi/awp/bestpractise/test</directory>
         	</testResource>
     	</testResources>
 	</build>
