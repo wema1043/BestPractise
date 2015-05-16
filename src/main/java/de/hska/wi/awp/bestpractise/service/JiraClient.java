@@ -15,7 +15,7 @@ import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.core.util.Base64;
 
 import de.hska.wi.awp.bestpractise.utils.Constants;
-import de.hska.wi.awp.bestpractise.utils.CreateCacheFile;
+import de.hska.wi.awp.bestpractise.utils.CacheFile;
 
 /**
  * BestPractise
@@ -70,7 +70,7 @@ public class JiraClient {
 			String responseBody = response.getEntity(String.class);
 
 			// create cache File
-			CreateCacheFile.createCacheFile("JIRA", "ALL_ISSUES", date,
+			CacheFile.createCacheFile("JIRA", "ALL_ISSUES", date,
 					responseBody);
 			
 			

@@ -2,7 +2,6 @@ package de.hska.wi.awp.bestpractise.test;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 
 import org.apache.commons.io.IOUtils;
@@ -33,7 +32,7 @@ public class JsonParserTest {
 		parser.ParseJsonToIssue(json2IssuesAsString);
 		
 		//verify the results
-		assertSame("Sind nicht genau 2 Issues erzeugt!", 2, DataStore.getInstance().getAllIssues.size());
+		assertSame("They are not exactly 2 issues created", 2, DataStore.getInstance().getAllIssues.size());
 		
 	}
 
