@@ -40,11 +40,6 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<testResources>
-        	<testResource>
-              	<directory>${project.basedir}/src/main/java/de/hska/wi/awp/bestpractise/test</directory>
-        	</testResource>
-    	</testResources>
 	</build>
 	<dependencies>
 		<dependency>

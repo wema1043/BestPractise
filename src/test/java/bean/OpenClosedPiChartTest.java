@@ -1,4 +1,4 @@
-package de.hska.wi.awp.bestpractise.test;
+package bean;
 
 import static org.junit.Assert.*;
 

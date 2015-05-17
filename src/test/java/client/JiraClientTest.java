@@ -1,4 +1,4 @@
-package de.hska.wi.awp.bestpractise.test;
+package client;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

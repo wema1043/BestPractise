@@ -1,4 +1,4 @@
-package de.hska.wi.awp.bestpractise.test;
+package parser;
 
 import java.io.File;
 import java.io.FileInputStream;
