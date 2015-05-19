@@ -39,6 +39,14 @@
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12.3</version>
+				<configuration>
+					<workingDirectory>${project.build.directory}</workingDirectory>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
@@ -123,19 +131,20 @@
 			<version>1.19</version>
 		</dependency>
 		<dependency>
-        	<groupId>com.sun.jersey</groupId>
-        	<artifactId>jersey-client</artifactId>
-        	<version>1.8</version>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.8</version>
 		</dependency>
 		<dependency>
-    		<groupId>org.mockito</groupId>
-    		<artifactId>mockito-all</artifactId>
-    		<version>1.8.5</version>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-all</artifactId>
+			<version>1.8.5</version>
 		</dependency>
 		<dependency>
-  			<groupId>junit</groupId>
-  			<artifactId>junit</artifactId>
-  			<version>4.12</version>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
 		</dependency>
 	</dependencies>
 	<repositories>
@@ -155,17 +164,17 @@
 			<url>http://repository.primefaces.org</url>
 		</repository>
 	</repositories>
-<profiles>
-<profile>
-	<id>Liferay-v6.2-CE-GA4</id>
-	<properties>
-		<liferay.version>6.2.3</liferay.version>
-		<liferay.maven.plugin.version>6.2.3</liferay.maven.plugin.version>
-		<liferay.auto.deploy.dir>/Users/Marc/Documents/Liferay/liferay-portal-6.2-ce-ga4/deploy</liferay.auto.deploy.dir>
-		<liferay.app.server.deploy.dir>/Users/Marc/Documents/Liferay/liferay-portal-6.2-ce-ga4/tomcat-7.0.42/webapps</liferay.app.server.deploy.dir>
-		<liferay.app.server.lib.global.dir>/Users/Marc/Documents/Liferay/liferay-portal-6.2-ce-ga4/tomcat-7.0.42/lib/ext</liferay.app.server.lib.global.dir>
-		<liferay.app.server.portal.dir>/Users/Marc/Documents/Liferay/liferay-portal-6.2-ce-ga4/tomcat-7.0.42/webapps/ROOT</liferay.app.server.portal.dir>
-	</properties>
-	</profile>
-</profiles>
+	<profiles>
+		<profile>
+			<id>Liferay-v6.2-CE-GA4</id>
+			<properties>
+				<liferay.version>6.2.3</liferay.version>
+				<liferay.maven.plugin.version>6.2.3</liferay.maven.plugin.version>
+				<liferay.auto.deploy.dir>/Users/Marc/Documents/Liferay/liferay-portal-6.2-ce-ga4/deploy</liferay.auto.deploy.dir>
+				<liferay.app.server.deploy.dir>/Users/Marc/Documents/Liferay/liferay-portal-6.2-ce-ga4/tomcat-7.0.42/webapps</liferay.app.server.deploy.dir>
+				<liferay.app.server.lib.global.dir>/Users/Marc/Documents/Liferay/liferay-portal-6.2-ce-ga4/tomcat-7.0.42/lib/ext</liferay.app.server.lib.global.dir>
+				<liferay.app.server.portal.dir>/Users/Marc/Documents/Liferay/liferay-portal-6.2-ce-ga4/tomcat-7.0.42/webapps/ROOT</liferay.app.server.portal.dir>
+			</properties>
+		</profile>
+	</profiles>
 </project>
